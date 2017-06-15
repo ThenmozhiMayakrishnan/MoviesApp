@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Welcome to movies.com, <%= @user.name %></h1>
+    <p>
+      You have successfully ordered <%= @movies.keys.count %> movies
+    </p>
+   	<h3>Order Summary</h3>
+
+	<table>
+	  <tr>
+	    <th>Movie</th>
+	    <th>Quantity</th>
+	  </tr>
+	 
+	  <% @movies.each do |key, movie| %>
+	    <tr>
+	      <td><%= movie[:movie_name] %></td>
+	      <td><%= movie[:quantity] %></td>
+	    </tr>
+	  <% end %>
+	</table>
+	<h3>Total: <%= @cost %></h3>
+    <p>Thanks for ordering. Your order will be delivered within 3 Business days</p>
+  </body>
+</html>
+
